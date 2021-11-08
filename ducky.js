@@ -8,6 +8,24 @@ window.onload = function() {
   //   2. add a class to the element
   //   3. append the element to the body )
 
+  const duck = document.createElement('div');
+  duck.className = 'duck';
+  document.body.appendChild(duck);
+  duck.style.top = Math.random() * window.innerWidth + 'px'; 
+  duck.style.left = Math.random() * window.innerHeight + 'px'; 
+  setTimeout(function () { duck.remove() }, 1)
+
+  function createDuck() {
+    const duck = document.createElement('div');
+    duck.className = 'duck';
+    duck.style.top = Math.random() * window.innerWidth + 'px';
+    duck.style.left = Math.random() * window.innerHeight + 'px';
+    document.body.appendChild(duck);
+    let flapper = setInterval(function flapDuck() {
+      duck.classList.toggle('flap');
+    }, 250);
+  
+};
   // 2. Next, use setInterval to toggle the "flap" class on the duck every 250 ms (1/4 second)
   // https://www.w3schools.com/jsref/met_win_setinterval.asp
 
